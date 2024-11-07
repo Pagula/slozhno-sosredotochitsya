@@ -216,6 +216,14 @@
   .decorations {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
+  
+  .header {
+    block-size: max(100vw, 768px);
+  }
+
+  .footer {
+    block-size: max(100vw, 768px);
+  }
 
   .header .decorations {
     margin-inline-start: -20px;
@@ -265,6 +273,14 @@
   :root {
     --menu-margin: 0;
     --promo-margin: 114px;
+  }
+
+  .header {
+    block-size: max(100vw, 1024px);
+  }
+
+  .footer {
+    block-size: max(100vw, 1024px);
   }
 
   .header__theme-menu {
