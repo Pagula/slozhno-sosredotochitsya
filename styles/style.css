@@ -40,7 +40,7 @@
   filter: drop-shadow(0px 0px 4px var(--accent-color, #ff0070));
 }
 
-.header::before {
+.decorated-zone::before {
   content: '';
   position: absolute;
   display: block;
@@ -52,7 +52,7 @@
   inset-block-start: var(--general-padding, 10px);
 }
 
-.header::after {
+.decorated-zone::after {
   content: '';
   position: absolute;
   display: block;
@@ -71,7 +71,7 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .header__theme-menu-button {
@@ -100,12 +100,12 @@
   pointer-events: none;
 }
 
-.decoration {
+.decorations {
   justify-self: start;
   color: var(--heading-color, #DB00FF);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-  text-shadow:4px 4px 0px var(--accent-color, #ff0070); ;
+  text-shadow:4px 4px 0px var(--accent-color, #ff0070);
 }
 
 .header__promo {
@@ -117,5 +117,184 @@
   color: var(--title-decor-color, #000028);
   font-weight: 700;
   background-color: var(--accent-color, #ff0070);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap, 50px);
+  padding: var(--main-padding-block, 40px) var(--general-padding, 10px);
+}
+
+.main__section {
+  display: grid;
+  gap: 20px;
+}
+
+.main__section-title {
+  color: var(--title-color, #ff0070);
+}
+
+.main__section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-text-link {
+  text-decoration: none;
+  text-shadow:2px 2px 0px var(--accent-color, #ff0070);
+}
+
+.card-text-link:hover {
+  border-bottom: 1px solid var(--text-color, #F1B2CE);
+}
+
+.card-text-link:focus {
+  outline: none;
+}
+
+.card-text-link:focus-visible {
+  outline: 1px solid var(--text-color, #F1B2CE);
+}
+
+.regular {
+  font-weight: 400;
+ }
+
+.main__section.gallery {
+  grid-template-rows: auto 142px 355px 237px 355px 237px;
+}
+
+.gallery-image {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.gallery-image-item {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr;
+  padding: var(--general-padding, 10px);
+  block-size: max(100vw, 668px);
+}
+
+.footer .decorations {
+  justify-self: center;
+  align-self: center;
+  font-weight: 700;
+  text-shadow:2px 2px 0px var(--accent-color, #ff0070);
+}
+
+@media (width < 768px) {
+  .gallery {
+    gap: 10px;
+  }
+}
+
+@media (width >= 768px) {
+  @media (width < 1024px) {
+    :root {
+      --menu-margin: 173px;
+      --promo-margin: 162px;
+    }
+  }
+
+  :root {
+    --general-padding: 20px;
+    --main-padding-block: 60px;
+    --main-gap: 80px;
+  }
+  
+  .decorations {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header .decorations {
+    margin-inline-start: -20px;
+  }
+
+  .main__section {
+    grid-template-columns: 236px 1fr 1fr;
+  }
+
+  .becouse .main__section-content,
+  .advice .main__section-content {
+    grid-column: 2 / 4;
+  }
+
+  .factors .main__section-content {
+    grid-column: span 3;
+  }
+
+  .advice .main__section-title {
+    grid-row: span 2;
+  }
+
+  .advice .main__section-subtitle {
+    grid-column: span 2;
+  }
+
+  .gallery .main__section-subtitle {
+    grid-column: span 3;
+  }
+
+  .main__section.gallery {
+    grid-template-rows: auto 192px 230px 318px;
+  }
+
+  .gallery-image:nth-of-type(1),
+  .gallery-image:nth-of-type(5) {
+    grid-column: span 2;
+  }
+
+  .gallery-image:nth-of-type(2),
+  .gallery-image:nth-of-type(3) {
+    grid-row: span 2;
+  }
+}
+
+@media(width >= 1024px) {
+  :root {
+    --menu-margin: 0;
+    --promo-margin: 114px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header .decorations,
+  .footer .decorations {
+    text-shadow: 4px 4px 0px var(--accent-color, #ff0070);
+  }
+
+  .header__promo {
+    max-inline-size: 491px;
+  }
+
+  .main__section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .factors .main__section-content {
+    grid-column: span 1;
+    grid-row: 2 / 3;
+  }
+
+  .main__section.gallery {
+    grid-template-rows: auto 260px 315px 428px;
+  }
 }
 
