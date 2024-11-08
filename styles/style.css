@@ -218,11 +218,11 @@
   }
   
   .header {
-    block-size: max(100vw, 768px);
+    block-size: maxmin(100vw, 1024px);
   }
 
   .footer {
-    block-size: max(100vw, 768px);
+    block-size: maxmin(100vw, 1024px);
   }
 
   .header .decorations {
@@ -276,11 +276,11 @@
   }
 
   .header {
-    block-size: max(100vw, 1024px);
+    block-size: min(100vw, 768px);
   }
 
   .footer {
-    block-size: max(100vw, 1024px);
+    block-size: min(100vw, 768px);
   }
 
   .header__theme-menu {
