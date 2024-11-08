@@ -218,11 +218,11 @@
   }
   
   .header {
-    block-size: maxmin(100vw, 1024px);
+    block-size: max(100vw, 1024px);
   }
 
   .footer {
-    block-size: maxmin(100vw, 1024px);
+    block-size: max(100vw, 1024px);
   }
 
   .header .decorations {
