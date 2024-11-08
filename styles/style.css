@@ -3,12 +3,7 @@
   font-family: var(--font-family, 'IBM Plex Mono', monospace);
   font-size: var(--font-size, 18px);
   line-height: var(--line-height, 1.3);
-  background-color: var(--bg-color, #000028);
-  background-image: url(../images/cover-image-dark.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background: fixed var(--bg-color, #000028) url(../images/cover-image-dark.png) no-repeat center / cover;
 }
 
 .header {
@@ -95,7 +90,7 @@
   border-block-end: 1px solid var(--menu-color, #ff0070);
 }
 
-.header__theme-menu-button-active {
+.header__theme-menu-button_active {
   outline: 1px solid var(--menu-color, #ff0070);
   pointer-events: none;
 }
@@ -200,19 +195,6 @@
 }
 
 @media (width >= 768px) {
-  @media (width < 1024px) {
-    :root {
-      --menu-margin: 173px;
-      --promo-margin: 162px;
-    }
-  }
-
-  :root {
-    --general-padding: 20px;
-    --main-padding-block: 60px;
-    --main-gap: 80px;
-  }
-  
   .decorations {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
@@ -270,11 +252,6 @@
 }
 
 @media(width >= 1024px) {
-  :root {
-    --menu-margin: 0;
-    --promo-margin: 114px;
-  }
-
   .header {
     block-size: min(100vw, 768px);
   }
